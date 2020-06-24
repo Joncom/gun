@@ -58,7 +58,7 @@ describe("Put ACK", function(){
 				var env = test.props;
 				test.async();
 				try{ require('fs').unlinkSync(env.i+'data') }catch(e){}
-  			try{ require('gun/lib/fsrm')(env.i+'data') }catch(e){}
+				try{ require('gun/lib/fsrm')(env.i+'data') }catch(e){}
 				var server = require('http').createServer(function(req, res){
 					res.end("I am "+ env.i +"!");
 				});
