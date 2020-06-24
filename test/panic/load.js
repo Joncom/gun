@@ -86,7 +86,7 @@ describe("Load test "+ config.browsers +" browser(s) across "+ config.servers +"
 					res.end("I am "+ env.i +"!");
 				});
 				// Launch the server and start gun!
-				var Gun = require('gun');
+				try{ var Gun = require('gun'); }catch(e){ console.error(e) }
 				// Attach the server to gun.
 				var gun = Gun({file: env.i+'data', web: server, localStorage: false});
 				server.listen(env.config.port + env.i, function(){
